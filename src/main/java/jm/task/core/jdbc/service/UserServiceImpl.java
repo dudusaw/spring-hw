@@ -12,11 +12,7 @@ public class UserServiceImpl implements UserService {
     private UserDao userDao;
 
     public UserServiceImpl() {
-        this.userDao = new UserDaoJDBCImpl(Util.getMySQLConnection());
-    }
-
-    public UserServiceImpl(UserDao userDao) {
-        this.userDao = userDao;
+        this.userDao = new UserDaoJDBCImpl();
     }
 
     public void createUsersTable() {
