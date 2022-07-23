@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<body>
+
+<div th:fragment="header" class="d-flex justify-content-between text-white bg-dark p-2 px-3 mb-4">
+    <div>
+        <span class="fw-bolder" sec:authentication="name">Bob</span>
+        <span>with roles: <span th:each="role : ${#authentication.getAuthorities()}" th:text="${role.authority}"></span></span>
+    </div>
+    <a th:href="@{/logout}" href="#" class="text-white-50">Logout</a>
+</div>
+
+</body>
+
+</html>
